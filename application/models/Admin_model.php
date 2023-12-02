@@ -20,7 +20,7 @@ class Admin_model extends CI_Model
     public function getAllUsersData()
     {
 
-        return $this->db->get("users")->result_array();
+        return $this->db->order_by('date_created', 'DESC')->get('users')->result_array();
     }
 
     public function getUsersAktif()
