@@ -18,7 +18,6 @@
 														<th class="wd-15p border-bottom-0">Email</th>
 														<th class="wd-15p border-bottom-0">Tanggal Pembayaran</th>
 														<th class="wd-20p border-bottom-0">Status</th>
-														<th class="wd-15p border-bottom-0">Bukti Pembayaran</th>
 														<th class="wd-10p border-bottom-0">Aksi</th>
 													</tr>
 												</thead>
@@ -36,8 +35,36 @@
 																echo 'Sudah Melakukan Pembayaran(Aktif)';
 															}
 														?></td>
-                                                        <td><img src="<?= base_url('assets/proof_of_payment/') . $pay['proof_of_payment']?>" alt=""></td>
+														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#<?= $pay[]?>">Grid modal</button>
+															</div></td>
+                                                        <!-- <td><img src=" base_url('assets/proof_of_payment/') . $pay['proof_of_payment']?>" alt=""></td> -->
 													</tr>
+													<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
+														<div class="modal-dialog" role="document">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title" id="example-Modal2">Modal title</h5>
+																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">×</span>
+																	</button>
+																</div>
+																<div class="modal-body">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<p>.</p>
+																		</div>
+																		<div class="col-md-6">
+																			<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the who loves toil and pain can procureor sit aspernatur  system.</p>
+																		</div>
+																	</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+																	<button type="button" class="btn btn-primary">Save changes</button>
+																</div>
+															</div>
+														</div>
+													</div>
 												<?php endforeach ;?>
 												</tbody>
 											</table>
@@ -49,3 +76,5 @@
 							</div>
 						</div>
 						
+						<!-- Grid Modal -->
+		
