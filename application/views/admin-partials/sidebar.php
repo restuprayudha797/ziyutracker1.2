@@ -4,7 +4,13 @@
      <nav class="horizontalMenu clearfix">
        <ul class="horizontalMenu-list">
 
-         <?php if ($user['is_active'] == 3) : ?>
+         <?php if ($user['is_active'] == 3) : 
+          
+          
+          
+          
+          ?>
+
 
 
            <li aria-haspopup="true"><a href="<?= base_url('dashboard') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>

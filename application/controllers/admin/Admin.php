@@ -61,24 +61,4 @@ class Admin extends CI_Controller
         $this->load->view('admin-index', $data);
     }
 
-
-    public function data_pembayaran()
-    {
-
-        // Ambil data dari database atau sumber data lainnya
-
-        $payment = $this->adm->getAllPaymentData();
-
-        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-
-        $data = [
-            'title' => 'Users',
-            'content' => 'page/k_payment',
-            'user' => $user,
-            'payment' => $payment
-        ];
-
-        $this->load->view('admin-index', $data);
-    }
-
 }

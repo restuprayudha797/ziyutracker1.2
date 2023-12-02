@@ -36,7 +36,7 @@ class Auth_model extends CI_Model
                 } elseif ($user['is_active'] == 3) {
                     // sudah mendaftar, aktifasi, dan sudah melakukan pembayaran (aktif)
                     $this->_set_session($user['email']);
-                    redirect('dashboard');
+                    redirect('dasbor');
                 } elseif ($user['is_active'] == 4) {
                     // user dinonaktifkan / dibekukan dan tidak dapat mengakses fitur ziyutrack
                     echo 'aman bisa masuk dashboard user';

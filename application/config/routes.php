@@ -54,6 +54,7 @@ $route = array(
     'beranda' => 'home',
     'data-user' => 'admin/admin/page_users',
     'login' => 'auth/auth',
+    'dasbor' => 'user/dasbor',
     'verify' => 'auth/auth/verify',
     'register' => 'auth/auth/register',
     'informasi-pembayaran' => 'auth/payment',
