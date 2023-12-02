@@ -101,7 +101,7 @@ $PAYMENT_DATA = $this->db->get_where('payment', ['email' => $this->session->user
               melakukan konfirmasi pembayaran, informasi selanjutnya akan kami kirim Kepada Email anda:
               <b> <?= $user['email'] ?></b>
             </p>
-            <a href="#" class="badge bg-primary"><i class=""></i> Whatsapp Admin</a>
+            <a href="https://api.whatsapp.com/send?phone=+6285176929114&text=Saya%20sudah%20melakukan%20pembayaran" class="badge bg-primary"><i class=""></i> Whatsapp Admin</a>
           </div>
           <div class="card-footer text-muted">
             Terimakasih telah menggunakan produk kami
