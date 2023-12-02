@@ -26,11 +26,11 @@ class Admin extends CI_Controller
         // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data = [
             'title' => 'Dashboard',
-            'content' => 'dashboard/dashboard',
+            'content' => 'table/index',
             // 'user' => $user
         ];
 
-        $this->load->view('admin/index', $data);
+        $this->load->view('admin-index', $data);
     }
 
 }
