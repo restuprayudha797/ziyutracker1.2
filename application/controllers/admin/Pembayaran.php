@@ -39,4 +39,10 @@ class Pembayaran extends CI_Controller
 
         $this->load->view('admin-index', $data);
     }
+
+    public function Prosess_Data($state, $id)
+    {
+
+        $this->adm->Prosess_Data($state, $id);
+    }
 }

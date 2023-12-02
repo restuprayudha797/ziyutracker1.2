@@ -28,19 +28,18 @@
 														<td><?= date('d F Y',$pay['payment_date'])?></td>
 														<td><?php 
 															if ($pay['role_payment'] == 1) {
-																echo 'Belum Aktifasi';
+																echo 'PENDING';
 															}elseif ($pay['role_payment'] == 2) {
-																echo 'Belum Melakukan Pembayaran';
+																echo 'BERHASIL';
 															}elseif ($pay['role_payment'] == 3) {
-																echo 'Sudah Melakukan Pembayaran(Aktif)';
+																echo 'DITOLAK';
 															}
 														?></td>
 														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#<?= $pay[]?>">Grid modal</button>
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $pay['id_payment']?>">Grid modal</button>
 															</div></td>
-                                                        <!-- <td><img src=" base_url('assets/proof_of_payment/') . $pay['proof_of_payment']?>" alt=""></td> -->
 													</tr>
-													<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
+													<div class="modal fade" id="modal<?= $pay['id_payment']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
@@ -52,15 +51,39 @@
 																<div class="modal-body">
 																	<div class="row">
 																		<div class="col-md-6">
-																			<p>.</p>
+																			<p>Nama : <?= $pay['name']?></p>
+																			<p>Email : <?= $pay['email']?></p>
+																			<p>No Tlp : <?= $pay['phone']?></p>
+																			<p>Tanggal Pembayaran : <?= date('d F Y',$pay['payment_date'])?></p>
+																			<p>Status : <?php 
+																						if ($pay['role_payment'] == 1) {
+																							echo 'PENDING';
+																						}elseif ($pay['role_payment'] == 2) {
+																							echo 'BERHASIL';
+																						}elseif ($pay['role_payment'] == 3) {
+																							echo 'DITOLAK';
+																						}
+																					?></p>
 																		</div>
 																		<div class="col-md-6">
-																			<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the who loves toil and pain can procureor sit aspernatur  system.</p>
+                                                        				<img style="heigth:100px; width:200px;" src=" <?=base_url('assets/proof_of_payment/') . $pay['proof_of_payment']?>" alt="">	
+                                                        				
+																			
 																		</div>
 																	</div>
 																<div class="modal-footer">
-																	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-																	<button type="button" class="btn btn-primary">Save changes</button>
+																	<?php if ($pay['role_payment'] == 1) : ?>
+																		<a href="<?= base_url('admin/pembayaran/Prosess_Data/cancel/' . $pay['id_payment']) ?>" class="btn btn-danger">
+																		BATALKAN
+																		</a>
+																		<a href="<?= base_url('admin/pembayaran/Prosess_Data/done/' . $pay['id_payment']) ?>" class="btn btn-success">
+																		KONFIRMASI
+																		</a>
+																		
+																		
+																	<?php endif ; ?>
+																	
+																	
 																</div>
 															</div>
 														</div>
