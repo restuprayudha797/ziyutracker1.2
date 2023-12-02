@@ -73,7 +73,7 @@ class Admin extends CI_Controller
 
         $data = [
             'title' => 'Users',
-            'content' => 'page/users',
+            'content' => 'page/k_payment',
             'user' => $user,
             'payment' => $payment
         ];
