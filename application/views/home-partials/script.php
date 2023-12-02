@@ -68,7 +68,7 @@
         Swal.fire({
             icon: "question",
             title: "KONFIRMASI",
-            text: "Apakah anda yakin ingin melakukan pembayaran secara cash",
+            text: "Apakah anda yakin ingin melakukan pembayaran ditempat",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#FF0000",
