@@ -4,16 +4,16 @@
             <div class="avatar-list p-5">
                 <center>
 
-                    <?php if ($ledStatus[0]['state'] == 1) : ?>
+                    <?php if ($ledStatus['state'] == 1) : ?>
                         <a href="<?= base_url('off') ?>">
-                            <img src="<?= base_url('front_ass/icon/on.png') ?>" alt="" width="140px">
+                            <img src="<?= base_url('assets/root/icon/on.png') ?>" alt="" width="140px">
                         </a>
                         <h1 class="mt-3">Hidup</h1>
 
 
                     <?php else : ?>
                         <a href="<?= base_url('on') ?>">
-                            <img src="<?= base_url('front_ass/icon/off.png') ?>" alt="" width="140px">
+                            <img src="<?= base_url('assets/root/icon/off.png') ?>" alt="" width="140px">
                         </a>
                         <h1 class="mt-3">Mati</h1>
                     <?php endif ?>
