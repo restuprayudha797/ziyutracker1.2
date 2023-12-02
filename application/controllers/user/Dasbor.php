@@ -17,12 +17,18 @@ class Dasbor extends CI_Controller{
 
 
             $this->load->model('Admin_model', 'adm');
+
         }
     }
 
     public function index(){
 
-        echo 1;
+        $data = [
+            'title' => 'Dashboard',
+            'page' => ''
+        ];
+        $this->load->view('admin-index', $data);
+      
     }
 
 }

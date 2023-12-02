@@ -31,7 +31,7 @@ class Admin extends CI_Controller
 
         $data = [
             'title' => 'Dashboard',
-            'content' => 'page/index',
+            'page' => 'index',
             'user' => $user
         ];
 
@@ -51,7 +51,7 @@ class Admin extends CI_Controller
 
         $data = [
             'title' => 'Users',
-            'content' => 'page/users',
+            'page' => 'users',
             'user' => $user,
             'users' => $users,
             'aktif_user' => $useraktif,
