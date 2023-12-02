@@ -18,7 +18,7 @@ function check_login($is_active)
         } elseif ($is_active == 4) {
             echo 4;
         } elseif ($is_active == 5) {
-            echo 5;
+           redirect('data-user');
         }
     } else {
 
