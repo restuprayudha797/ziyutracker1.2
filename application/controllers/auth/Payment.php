@@ -23,7 +23,7 @@ class Payment extends CI_Controller
         $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data['title'] = "Informasi Pembayaran";
         $data = [
-            'title' => 'Pendaftaran',
+            'title' => 'Informasi Pembayaran',
             'page' => 'auth/payment',
             'user' => $user
         ];
