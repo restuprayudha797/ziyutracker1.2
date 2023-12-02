@@ -27,6 +27,8 @@ class Admin extends CI_Controller
 
         // Ambil data dari database atau sumber data lainnya
 
+        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+
         $data = [
             'title' => 'Dashboard',
             'content' => 'page/index',
@@ -42,6 +44,8 @@ class Admin extends CI_Controller
         // Ambil data dari database atau sumber data lainnya
 
         $users = $this->adm->getAllUsersData();
+
+        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
 
         $data = [
             'title' => 'Users',
