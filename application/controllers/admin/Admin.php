@@ -8,7 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
 
 
-        // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         // $is_active = $user['is_active'];
 
         // load helper clogin jika is_active tidak = 2
@@ -46,7 +46,7 @@ class Admin extends CI_Controller
         $data = [
             'title' => 'Users',
             'content' => 'page/users',
-            // 'user' => $user
+            'user' => $user,
             'users' => $users
         ];
 
