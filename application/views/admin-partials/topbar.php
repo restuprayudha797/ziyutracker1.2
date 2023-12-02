@@ -33,7 +33,7 @@
                                             <h5 class="mb-2">Administrator</h5>
                                             <i class="fa fa-circle-thin text-right ml-auto fs-10 text-success float-right"></i>
                                         </div>
-                                        <p class="mb-1">Selamat datang <?= $user['name'] ?></p>
+                                        <!-- <p class="mb-1">Selamat datang $user['name'] ?></p> -->
                                         <span class="font-weight-normal fs-13 text-muted"><?= date('d-m, Y', time()) ?></span>
                                     </div>
                                 </a>
@@ -47,7 +47,7 @@
                         <a class="nav-link pr-0 leading-none" href="#" data-toggle="dropdown" aria-expanded="false">
                             <div class="profile-details mt-1">
                                 <span class="mr-3 mb-0  fs-15 font-weight-semibold">Ziyu Tracker</span>
-                                <small class="text-muted mr-3"><b><?= $user['name'] ?></small>
+                                <!-- <small class="text-muted mr-3"><b> $user['name'] ?></small> -->
                             </div>
                             <img class="avatar avatar-md brround" src="<?= base_url('front_ass') ?>/icon/user_default.png" alt="image">
                         </a>
@@ -57,8 +57,8 @@
                                     <img class="user-images" src="<?= base_url('front_ass') ?>/icon/user_default.png" alt="image">
                                 </div>
                                 <div class="user-details text-center">
-                                    <h4 class="mb-0"><?= $user['name'] ?></h4>
-                                    <p class="mb-1 fs-13 text-white-50"><?= $user['email'] ?></p>
+                                    <!-- <h4 class="mb-0"> $user['name'] ?></h4> -->
+                                    <!-- <p class="mb-1 fs-13 text-white-50"> $user['email'] ?></p> -->
                                 </div>
                             </div>
                             <a class="dropdown-item" href="#">

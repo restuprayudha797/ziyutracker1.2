@@ -12,7 +12,7 @@ class Admin extends CI_Controller
         $data = [
             'title' => 'Dashboard',
             'content' => 'dashboard/dashboard',
-            // 'user' => $user
+            'user' => $user
         ];
 
         $this->load->view('admin/index', $data);
