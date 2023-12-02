@@ -1,11 +1,11 @@
-<link rel="shortcut icon" href="<?= base_url('assets/frontend/icon/track.png') ?>" type="image/svg" />
+<link rel="shortcut icon" href="<?= base_url('assets/home/icon/track.png') ?>" type="image/svg" />
 
 
     <!-- ===== All CSS files ===== -->
-    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>frontend/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>frontend/css/animate.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>frontend/css/lineicons.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>frontend/css/test3.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>css/animate.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>css/lineicons.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/home/') ?>css/test3.css" />
 
     <script src="https://kit.fontawesome.com/92aabb25e4.js" crossorigin="anonymous"></script>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
