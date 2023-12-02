@@ -41,13 +41,13 @@ class Admin extends CI_Controller
 
         // Ambil data dari database atau sumber data lainnya
 
-        $users = $this->db->get("users")->result_array();
+        $users = $this->adm->getAllUsersData();
 
         $data = [
             'title' => 'Dashboard',
             'content' => 'page/index',
             // 'user' => $user
-            'users' => $users,
+            'users' => $users
         ];
 
         $this->load->view('admin-index', $data);
