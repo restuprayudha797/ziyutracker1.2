@@ -57,4 +57,23 @@ class Admin extends CI_Controller
         $this->load->view('admin-index', $data);
     }
 
+    public function users_aktifasi()
+    {
+
+        // Ambil data dari database atau sumber data lainnya
+
+        $users = $this->adm->getAllUsersData();
+
+        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data = [
+            'title' => 'Users',
+            'content' => 'page/users_aktifasi',
+            'user' => $user,
+            'users' => $users
+        ];
+
+        $this->load->view('admin-index', $data);
+    }
+
 }
