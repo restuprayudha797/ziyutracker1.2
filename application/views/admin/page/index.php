@@ -13,6 +13,7 @@
 										<div class="table-responsive ">
 											<table id="example-2" class="table table-striped table-bordered text-nowrap">
 												<thead>
+													
 													<tr>
 														<th class="wd-15p border-bottom-0">First name</th>
 														<th class="wd-15p border-bottom-0">Last name</th>
@@ -23,7 +24,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													
+												<?php foreach ($users as $usrs) : ?>
 													<tr>
 														<td>agus</td>
 														<td>Chloe</td>
@@ -32,6 +33,7 @@
 														<td>$654,765</td>
 														<td>b.Chloe@datatables.net</td>
 													</tr>
+												<?php endforeach ;?>	
 												</tbody>
 											</table>
 										</div>
