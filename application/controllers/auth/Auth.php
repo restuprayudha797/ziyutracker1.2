@@ -47,12 +47,13 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
 
 
-            $data['title'] = 'Masuk';
+            $data = [
+                'title' => 'Masuk',
+                'page' => 'auth/index-auth'
+            ];
 
-            $this->load->view('frontend/layout/frontend-header', $data);
-            $this->load->view('frontend/layout/frontend-navbar');
-            $this->load->view('auth/index-auth');
-            $this->load->view('frontend/layout/frontend-footer');
+        
+            $this->load->view('home-index', $data);
         } else {
 
             $this->am->login();
