@@ -14,6 +14,8 @@
     <!-- load navbar -->
     <?php $this->load->view('home-partials/navbar'); ?>
 
+    <?php $this->load->view('home/' . $page); ?>
+    
 
     <?php if ($title == "Application") : ?>
     <?php else : ?>
