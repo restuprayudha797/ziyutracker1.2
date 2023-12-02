@@ -51,10 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route = array(
-    'beranda' => 'home',
+    'beranda' => 'home/home',
+    'data-user' => 'admin/admin'
 );
 
 
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'home/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
