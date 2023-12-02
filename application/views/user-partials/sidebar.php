@@ -7,7 +7,7 @@
          <?php
 
           // get user_active
-          $user_active_data = $this->db->get_where('user_active', ['email' => $user['email']])->result_array();
+          $user_active_data = $this->db->get_where('devices_active', ['email' => $user['email'], 'is_active' => 1])->result_array();
           ?>
 
          <li aria-haspopup="true"><a href="<?= base_url('dashboard') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
@@ -20,16 +20,25 @@
            </li>
          <?php else :  ?>
 
-           <li aria-haspopup="true"><a class="sub-icon "><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Lokasi <i class="fa fa-angle-down horizontal-icon"></i></a>
+           <li aria-haspopup="true"><a class="sub-icon "><img src="<?= base_url('assets/root/icon/maps.png') ?>" alt="" width="20px"> Lokasi <i class="fa fa-angle-down horizontal-icon"></i></a>
              <ul class="sub-menu">
                <?php foreach ($user_active_data as $row) : ?>
-                 <li aria-haspopup="true"><a href="<?= base_url('lokasi/' . $row['id_active']) ?>" class="slide-item"><?= $row['device_name'] ?>
-                 </a></li>
+                 <li aria-haspopup="true"><a href="<?= base_url('lokasi?data=') . $row['id_active']; ?>" class="slide-item"><?= $row['device_name'] ?>
+                   </a></li>
                <?php endforeach ?>
 
              </ul>
            </li>
+           <li aria-haspopup="true"><a class="sub-icon "><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Saklar <i class="fa fa-angle-down horizontal-icon"></i></a>
+             <ul class="sub-menu">
+               <?php foreach ($user_active_data as $row) : ?>
+                 <li aria-haspopup="true"><a href="<?= base_url('saklar?data=') . $row['id_active']; ?>" class="slide-item"><?= $row['device_name'] ?>
+                   </a></li>
+               <?php endforeach ?>
 
+             </ul>
+           </li>
+           
          <?php endif ?>
 
          <li aria-haspopup="true"><a href="widgets.html" class=""><img src="<?= base_url('assets/root/icon/resume.png') ?>" alt="" width="20px"> Profile</a></li>

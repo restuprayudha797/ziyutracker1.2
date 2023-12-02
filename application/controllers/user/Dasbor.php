@@ -15,9 +15,6 @@ class Dasbor extends CI_Controller{
             check_login($is_active);
         } else {
 
-
-            $this->load->model('Admin_model', 'adm');
-
         }
     }
 
