@@ -60,7 +60,8 @@ $route = array(
     'bayar' => 'auth/payment/pay',
     'keluar' => 'logout',
     'dashboard' => "admin/admin",
-    'aktifasi-user' => "admin/admin/users_aktifasi"
+    'aktifasi-user' => "admin/admin/users_aktifasi",
+    'pembayaran' => "admin/admin/k_payment"
 
 );
 
