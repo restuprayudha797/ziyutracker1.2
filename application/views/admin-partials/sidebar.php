@@ -3,7 +3,7 @@
    <div class="horizontal-mainwrapper container clearfix">
      <nav class="horizontalMenu clearfix">
        <ul class="horizontalMenu-list">
-         <li aria-haspopup="true"><a href="<?= base_url('dashboard') ?>" class="sub-icon"><img src="<?= base_url('front_ass/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
+         <li aria-haspopup="true"><a href="<?= base_url('admin/index') ?>" class="sub-icon"><img src="<?= base_url('front_ass/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
          </li>
 
          <li aria-haspopup="true"><a href="<?= base_url('lokasi') ?>" class="sub-icon"><img src="<?= base_url('front_ass/icon/maps.png') ?>" alt="" width="20px">

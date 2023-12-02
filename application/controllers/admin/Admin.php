@@ -29,7 +29,7 @@ class Admin extends CI_Controller
 
         $data = [
             'title' => 'Dashboard',
-            'content' => 'dashboard/dashboard',
+            'content' => 'page/index',
             'user' => $user
         ];
 
@@ -44,8 +44,8 @@ class Admin extends CI_Controller
         $users = $this->adm->getAllUsersData();
 
         $data = [
-            'title' => 'Dashboard',
-            'content' => 'page/index',
+            'title' => 'Users',
+            'content' => 'page/users',
             // 'user' => $user
             'users' => $users
         ];
