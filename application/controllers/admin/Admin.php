@@ -35,7 +35,7 @@ class Admin extends CI_Controller
             'user' => $user
         ];
 
-        $this->load->view('admin/index', $data);
+        $this->load->view('admin-index', $data);
     }
 
     public function page_users()
