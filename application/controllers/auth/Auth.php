@@ -140,7 +140,7 @@ class Auth extends CI_Controller
                     $this->db->delete('activation_token', ['email' => $email]);
 
                     $this->session->set_flashdata('auth_message', '<div class="alert alert-success" role="alert"> Akun anda sudah aktif, Silah Login  </div>');
-                    redirect('auth');
+                    redirect('login');
                 } else {
 
 
@@ -148,17 +148,17 @@ class Auth extends CI_Controller
                     $this->db->delete('activation_token', ['email' => $email]);
 
                     $this->session->set_flashdata('auth_message', '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan karena Akun telah kadaluarsa silahkan Mendaftar kembali  </div>');
-                    redirect('auth');
+                    redirect('login');
                 }
             } else {
 
                 $this->session->set_flashdata('auth_message', '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token aktifasi tidak sesuai  </div>');
-                redirect('auth');
+                redirect('login');
             }
         } else {
 
             $this->session->set_flashdata('auth_message', '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, email tidak sesuai  </div>');
-            redirect('auth');
+            redirect('login');
         }
     }
     // ===== END VERIFY EMAIL ACOUNT =====

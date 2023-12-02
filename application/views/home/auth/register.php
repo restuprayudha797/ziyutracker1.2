@@ -20,7 +20,7 @@
                     <div class="ud-login-logo text-center mb-3">
                         <h1><?= $title; ?></h1>
                     </div>
-                    <form class="ud-login-form" action="<?= base_url('auth/register') ?>" method="post">
+                    <form class="ud-login-form" action="<?= base_url('register') ?>" method="post">
                         <div class="ud-form-group">
                             <label for="name" class="form-label float-start">Nama</label>
                             <input type="text" name="name" id="name" autofocus autocomplete="OFF" value="<?= set_value('name'); ?>" placeholder="Masukkan nama" />
@@ -66,7 +66,7 @@
                     </form>
                     <div class="text-center">
                         <p class="signup-option">
-                            Sudah Memiliki Akun? <a href="<?= base_url('auth') ?>">Masuk Sekarang</a>
+                            Sudah Memiliki Akun? <a href="<?= base_url('login') ?>">Masuk Sekarang</a>
                         </p>
                     </div>
                 </div>

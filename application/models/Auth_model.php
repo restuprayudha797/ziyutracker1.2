@@ -197,15 +197,15 @@ class Auth_model extends CI_Model
 </html>');
 
             if ($this->email->send()) {
-                $this->session->set_flashdata('auth_message', '<div class="alert alert-success" role="alert"> Akun anda berhasil dibuat silahkan cek email anda secara berkala dan lakukan aktifasi, jika email tidak masuk sampai dengan jangka waktu yang telah ditentukan 10 menit, silahkan klik <a href="">disini</a> untuk menghubungi admin</div>');
+                $this->session->set_flashdata('auth_message', '<div class="alert alert-success" role="alert"> Akun anda berhasil dibuat silahkan cek email anda secara berkala dan lakukan aktifasi, jika email tidak masuk sampai dengan jangka waktu yang telah ditentukan 10 menit, silahkan klik <a href="https://api.whatsapp.com/send?phone=+6285176929114&text=Aktifasi%20Token%20Tidak%20Masuk">disini</a> untuk menghubungi admin</div>');
                 redirect('login');
             } else {
-                echo $this->email->print_debugger();
+                // echo $this->email->print_debugger();
 
                 $this->db->delete($this->USERS, ['email' => $email]);
                 $this->db->delete($this->TOKEN, ['email' => $email]);
 
-                echo '<div class="alert alert-danger" role="alert">Mohon Maaf Sistem saat ini sedang sibuk silahkan hubungi admin dan lakukan registrasi secara manual dengan klik link <a href="http://localhost/gpstracklimbungan.site/home/contact">disini</a><b>Sekali lagi mohon maaf atas ketidak nyamanan nya terimakasih...</b></div>';
+                echo '<div class="alert alert-danger" role="alert">Mohon Maaf Sistem saat ini sedang sibuk silahkan hubungi admin dan lakukan registrasi secara manual dengan klik link <a href="https://api.whatsapp.com/send?phone=+6285176929114&text=Saya%20tidak%20Bisa%20Melakukan%20Aktifasi%20email">disini</a><b>Sekali lagi mohon maaf atas ketidak nyamanan nya terimakasih...</b></div>';
             }
         }
     }

@@ -18,7 +18,7 @@
 
             <div class="navbar-collapse">
               <ul id="nav" class="navbar-nav mx-auto">
-                <?php if ($title == 'Masuk' || $title == 'Informasi Pembayaran') : ?>
+                <?php if ($title == 'Masuk' || $title == 'Informasi Pembayaran' || $title == 'Pendaftaran') : ?>
                   <li class="nav-item">
                     <a class="" href="<?= base_url('beranda/') ?>">Beranda</a>
                   <li class="nav-item">
