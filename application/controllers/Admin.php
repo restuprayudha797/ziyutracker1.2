@@ -18,7 +18,7 @@ class Admin extends CI_Controller
         $this->load->view('admin/index', $data);
     }
 
-    public function table_users()
+    public function page_users()
     {
 
         // Ambil data dari database atau sumber data lainnya
@@ -26,7 +26,7 @@ class Admin extends CI_Controller
         // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data = [
             'title' => 'Dashboard',
-            'content' => 'table/index',
+            'content' => 'page/index',
             // 'user' => $user
         ];
 

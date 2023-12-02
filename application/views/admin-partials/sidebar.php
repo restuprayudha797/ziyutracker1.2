@@ -12,7 +12,9 @@
          <li aria-haspopup="true"><a href="<?= base_url('saklar') ?>" class="sub-icon"><img src="<?= base_url('front_ass/icon/switch.png') ?>" alt="" width="20px"> Saklar </a>
          </li>
          <li aria-haspopup="true"><a href="widgets.html" class=""><img src="<?= base_url('front_ass/icon/resume.png') ?>" alt="" width="20px"> Profile</a></li>
-     </nav>
+         <li aria-haspopup="true"><a href="<?= base_url('admin/page_user') ?>" class="sub-icon"><img src="<?= base_url('front_ass/icon/switch.png') ?>" alt="" width="20px"> Users </a>
+         </li>
+        </nav>
      <!--Nav end -->
    </div>
  </div>
