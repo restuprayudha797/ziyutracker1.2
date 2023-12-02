@@ -41,7 +41,7 @@ class Admin extends CI_Controller
 
         // Ambil data dari database atau sumber data lainnya
 
-        $users = $this->adm->getAllUsersData();
+        $users = $this->db->get("users")->result_array();
 
         $data = [
             'title' => 'Dashboard',
