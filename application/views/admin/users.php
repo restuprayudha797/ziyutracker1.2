@@ -71,7 +71,7 @@
 													
 													<tr>
 														<th class="wd-15p border-bottom-0">Email</th>
-														<th class="wd-20p border-bottom-0">No Tlp</th>
+														<th class="wd-20p border-bottom-0">Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -79,10 +79,9 @@
 												<?php foreach ($aktif_user as $usrA) : ?>
 													<tr>
 														<td><?= $usrA['email']?></td>
-														<td><div class="material-switch pull-right">
-															<input id="someSwitchOptionDefault" name="someSwitchOption00<?= $i++;?>" type="checkbox" />
-															<label for="someSwitchOptionDefault" class="label-default"></label>
-														</div></td>
+														<td><div class="form-check form-switch">
+														<input class="form-check-input" type="checkbox" role="switch" <?php if ($usrA['is_active'] == 3) : ?>id="flexSwitchCheckChecked"value="<?= $usrA['is_active']?> "checked<?php endif;?><?php if ($usrA['is_active'] == 4) : ?>id="flexSwitchCheckDefault"value="<?= $usrA['is_active']?>"<?php endif; ?>>
+													  </div></td>
 														
 													</tr>
 												<?php endforeach ;?>	
@@ -107,10 +106,9 @@
 												<?php foreach ($admin_aktif as $admA) : ?>
 													<tr>
 														<td><?= $admA['email']?></td>
-														<td><div class="material-switch pull-right">
-															<input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox" />
-															<label for="someSwitchOptionDefault" class="label-default"></label>
-														</div></td>
+														<td><div class="form-check form-switch">
+														<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+													  </div></td>
 													</tr>
 												<?php endforeach ;?>	
 												</tbody>
