@@ -23,6 +23,17 @@ class Admin_model extends CI_Model
         return $this->db->get("users")->result_array();
     }
 
+    public function getUsersAktif()
+    {
+
+        return $this->db->where_in('is_active', [3, 4])->get('users')->result_array();
+    }
+    public function getAdminAktif()
+    {
+
+        return $this->db->where_in('is_active', [5, 6])->get('users')->result_array();
+    }
+
     public function Prosess_Data($states, $id)
     {
 
