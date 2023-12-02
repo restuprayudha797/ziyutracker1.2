@@ -3,12 +3,30 @@
 class Admin extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+
+
+        // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        // $is_active = $user['is_active'];
+
+        // load helper clogin jika is_active tidak = 2
+
+        // if ($is_active != 6) {
+        //     check_login($is_active);
+        // } else {
+
+
+            $this->load->model('Admin_model', 'adm');
+        // }
+    }
+
     public function index()
     {
 
         // Ambil data dari database atau sumber data lainnya
 
-        // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data = [
             'title' => 'Dashboard',
             'content' => 'dashboard/dashboard',
@@ -23,11 +41,13 @@ class Admin extends CI_Controller
 
         // Ambil data dari database atau sumber data lainnya
 
-        // $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
+        $users = $this->adm->getAllUsersData();
+
         $data = [
             'title' => 'Dashboard',
             'content' => 'page/index',
             // 'user' => $user
+            'users' => $users,
         ];
 
         $this->load->view('admin-index', $data);
