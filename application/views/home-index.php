@@ -15,13 +15,21 @@
     <?php $this->load->view('home-partials/navbar'); ?>
 
     <?php $this->load->view('home/' . $page); ?>
-    
+
 
     <?php if ($title == "Application") : ?>
     <?php else : ?>
+        <?php $this->load->view('home-partials/footer'); ?>
 
     <?php endif ?>
+    <!-- ====== Back To Top Start ====== -->
+    <a class="back-to-top">
+        <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
 
+<!-- load script -->
+<?php $this->load->view('home-partials/script'); ?>
 
 
 </body>

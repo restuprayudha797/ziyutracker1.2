@@ -16,7 +16,7 @@
               <div class="apa1n"></div>
               <div class="apa1"></div>
               <div class="apa">
-                <img src="<?= base_url('assets/') ?>frontend/images/produk/gps.png" alt="gps-image" />
+                <img src="<?= base_url('assets/') ?>home/images/produk/gps.png" alt="gps-image" />
               </div>
               <div class="apa2"></div>
               <div class="apa2n"></div>
@@ -113,85 +113,21 @@
                 <br> untuk mengatasi hal ini tentu banyak sekali cara yang dapat kita gunakan untuk mengamankan kendaraan, contohnya seperti memasang gembok pada motor/kendaraan, dsb. <br>
                 dengan banyaknya opsi yang dapat kita gunakan disini kami dari ziyutechno ingin memberikan opsi/inovasi baru dengan memanfaatkan teknologi untuk mengamankan kendaraan anda sehingga anda dapat memantau kendaraan anda cukup melalui smartphone saja.
               </p>
-              <a href="javascript:void(0)" class="ud-main-btn">Hubungi Kami</a>
+              <a href="https://api.whatsapp.com/send?phone=+6285176929114&text=saya%20tertarik%20dengan%20produk/jasa%20yang%20Anda%20tawarkan.%20Bisa%20beri%20informasi%20lebih%20lanjut?" class="ud-main-btn">Hubungi Kami</a>
             </div>
           </div>
           <div class="ud-about-image">
-            <img src="<?= base_url('assets') ?>/images/about/about-image.svg" alt="about-image" />
+            <img src="<?= base_url('assets/home') ?>/images/about/about-image.svg" alt="about-image" />
           </div>
         </div>
       </div>
     </section>
     <!-- ====== About End ====== -->
 
-    <!-- ====== Pricing Start ====== -->
-    <section id="pricing" class="ud-pricing">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="ud-section-title mx-auto text-center">
-              <span>Langganan</span>
-              <h2>Mulai Berlangganan</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-0 align-items-center justify-content-center">
-          <div class="col-lg-4 col-md-10 col-sm-10">
-            <div class="ud-single-pricing first-item wow fadeInUp" data-wow-delay=".15s">
-              <div class="ud-pricing-header">
-                <h3>Mulai Dari</h3>
-                <h4>Rp. 10.000/ Minggu</h4>
-              </div>
-              <div class="ud-pricing-body">
-              </div>
-              <div class="ud-pricing-footer">
-                <a href="<?= base_url('purchase'); ?>" class="ud-main-btn ud-border-btn">
-                  Beli Sekarang
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-10 col-sm-10">
-            <div class="ud-single-pricing active wow fadeInUp" data-wow-delay=".1s">
-              <span class="ud-popular-tag">Rekomendasi</span>
-              <div class="ud-pricing-header">
-                <h3>Mulai Dari</h3>
-                <h4>Rp. 350.000/ Tahun</h4>
-              </div>
-              <div class="ud-pricing-body">
-              </div>
-              <div class="ud-pricing-footer">
-                <a href="<?= base_url('purchase'); ?>" class="ud-main-btn ud-white-btn">
-                  Beli Sekarang
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-10 col-sm-10">
-            <div class="ud-single-pricing last-item wow fadeInUp" data-wow-delay=".15s">
-              <div class="ud-pricing-header">
-                <h3>Mulai Dari</h3>
-                <h4>Rp. 35.000/ Bulan</h4>
-              </div>
-              <div class="ud-pricing-body">
-              </div>
-              <div class="ud-pricing-footer">
-                <a href="<?= base_url('purchase'); ?>" class="ud-main-btn ud-border-btn">
-                  Beli Sekarang
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ====== Pricing End ====== -->
-
     <!-- ====== FAQ Start ====== -->
-    <section id="faq" class="ud-faq">
+    <section id="faq" class="ud-faq" style="background-color: white;">
       <div class="shape">
-        <img src="<?= base_url('assets') ?>/images/faq/shape.svg" alt="shape" />
+        <img src="<?= base_url("assets/home") ?>/images/team/dotted-shape.svg" alt="shape" />
       </div>
       <div class="container">
         <div class="row">
@@ -317,18 +253,13 @@
     </section>
     <!-- ====== FAQ End ====== -->
 
-    <!-- ====== Testimonials Start ====== -->
-    <!-- <section id="testimonials" class="ud-testimonials">
+    <section id="testimonials" class="ud-testimonials" style="background-color: #F3F4FE;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="ud-section-title mx-auto text-center">
               <span>Testimonials</span>
-              <h2>What our Customers Says</h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
-              </p>
+              <h2>Apa Kata Pelanggan Kami</h2>
             </div>
           </div>
         </div>
@@ -351,7 +282,7 @@
               </div>
               <div class="ud-testimonial-info">
                 <div class="ud-testimonial-image">
-                  <img src="assets/images/testimonials/author-01.png" alt="author" />
+                  <img src="<?= base_url("assets/home") ?>/images/testimonials/author-01.png" alt="author" />
                 </div>
                 <div class="ud-testimonial-meta">
                   <h4>Sabo Masties</h4>
@@ -377,7 +308,7 @@
               </div>
               <div class="ud-testimonial-info">
                 <div class="ud-testimonial-image">
-                  <img src="assets/images/testimonials/author-02.png" alt="author" />
+                  <img src="<?= base_url("assets/home") ?>/images/testimonials/author-02.png" alt="author" />
                 </div>
                 <div class="ud-testimonial-meta">
                   <h4>Margin Gesmu</h4>
@@ -403,7 +334,7 @@
               </div>
               <div class="ud-testimonial-info">
                 <div class="ud-testimonial-image">
-                  <img src="assets/images/testimonials/author-03.png" alt="author" />
+                  <img src="<?= base_url("assets/home") ?>/images/testimonials/author-03.png" alt="author" />
                 </div>
                 <div class="ud-testimonial-meta">
                   <h4>William Smith</h4>
@@ -413,35 +344,8 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="ud-brands wow fadeInUp" data-wow-delay=".2s">
-              <div class="ud-title">
-                <h6>Trusted and Used by</h6>
-              </div>
-              <div class="ud-brands-logo">
-                <div class="ud-single-logo">
-                  <img src="assets/images/brands/ayroui.svg" alt="ayroui" />
-                </div>
-                <div class="ud-single-logo">
-                  <img src="assets/images/brands/uideck.svg" alt="uideck" />
-                </div>
-                <div class="ud-single-logo">
-                  <img src="assets/images/brands/graygrids.svg" alt="graygrids" />
-                </div>
-                <div class="ud-single-logo">
-                  <img src="assets/images/brands/lineicons.svg" alt="lineicons" />
-                </div>
-                <div class="ud-single-logo">
-                  <img src="assets/images/brands/ecommerce-html.svg" alt="ecommerce-html" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section> -->
-    <!-- ====== Testimonials End ====== -->
+    </section>
 
     <!-- ====== Team Start ====== -->
     <section id="team" class="ud-team">
@@ -460,11 +364,11 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="<?= base_url("assets") ?>/images/team/yuda.jpg" alt="team" />
+                  <img src="<?= base_url("assets/home") ?>/images/team/yuda.jpg" alt="team" />
 
                 </div>
 
-                <img src="<?= base_url("assets") ?>/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                <img src="<?= base_url("assets/home") ?>/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
 
               </div>
               <div class="ud-team-info">
@@ -494,10 +398,10 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".15s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="<?= base_url("assets") ?>/images/team/zidan.jpg" alt="team" />
+                  <img src="<?= base_url("assets/home") ?>/images/team/zidan.jpg" alt="team" />
                 </div>
 
-                <img src="<?= base_url("assets") ?>/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                <img src="<?= base_url("assets/home") ?>/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
 
               </div>
               <div class="ud-team-info">
@@ -523,39 +427,6 @@
               </ul>
             </div>
           </div>
-          <!-- <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-team wow fadeInUp" data-wow-delay=".2s">
-              <div class="ud-team-image-wrapper">
-                <div class="ud-team-image">
-                  <img src="assets/images/team/team-03.png" alt="team" />
-                </div>
-
-                <img src="assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
-                <img src="assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
-              </div>
-              <div class="ud-team-info">
-                <h5>Ilyas</h5>
-                <h6>Frontend Developer</h6>
-              </div>
-              <ul class="ud-team-socials">
-                <li>
-                  <a href="https://twitter.com/MusharofChy">
-                    <i class="lni lni-facebook-filled"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/MusharofChy">
-                    <i class="lni lni-twitter-filled"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/MusharofChy">
-                    <i class="lni lni-instagram-filled"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
