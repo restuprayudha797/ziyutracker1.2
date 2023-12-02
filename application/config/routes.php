@@ -55,7 +55,8 @@ $route = array(
     'data-user' => 'admin/admin/page_users',
     'login' => 'auth/auth',
     'keluar' => 'logout',
-    'dashboard' => "admin/admin"
+    'dashboard' => "admin/admin",
+    'aktifasi-user' => "admin/admin/users_aktifasi"
 
 );
 

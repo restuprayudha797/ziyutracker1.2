@@ -17,9 +17,6 @@
 													<tr>
 														<th class="wd-15p border-bottom-0">Nama</th>
 														<th class="wd-15p border-bottom-0">Email</th>
-														<th class="wd-20p border-bottom-0">No Tlp</th>
-														<th class="wd-15p border-bottom-0">Tanggal</th>
-														<th class="wd-10p border-bottom-0">Aktifasi</th>
 													</tr>
 												</thead>
 												<tbody>
