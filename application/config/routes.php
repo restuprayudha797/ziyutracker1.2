@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route = array(
-    'beranda' => 'Home',
+    'beranda' => 'home/home',
     'data-user' => 'admin/admin/page_users',
     'login' => 'auth/auth',
     'keluar' => 'logout'
@@ -59,6 +59,6 @@ $route = array(
 );
 
 
-$route['default_controller'] = 'Home';
+$route['default_controller'] = 'home/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
