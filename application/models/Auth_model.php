@@ -42,6 +42,7 @@ class Auth_model extends CI_Model
                     echo 'aman bisa masuk dashboard user';
                 } elseif ($user['is_active'] == 5) {
                     $this->_set_session($user['email']);
+                    redirect('data-user');
                 } elseif ($user['is_active'] == 6) {
                     // admin aktif
                     $this->_set_session($user['email']);
