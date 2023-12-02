@@ -52,7 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route = array(
     'beranda' => 'home/home',
-    'data-user' => 'admin/admin'
+    'data-user' => 'admin/admin/page_users',
+    'login' => 'auth/auth',
+
 );
 
 
