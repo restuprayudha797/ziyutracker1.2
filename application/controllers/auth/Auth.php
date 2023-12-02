@@ -52,7 +52,7 @@ class Auth extends CI_Controller
                 'page' => 'auth/index-auth'
             ];
 
-        
+
             $this->load->view('home-index', $data);
         } else {
 
@@ -66,7 +66,11 @@ class Auth extends CI_Controller
     public function register()
     {
 
-        $data['title'] = 'Pendaftaran';
+        $data = [
+            'title' => 'Pendaftaran',
+            'page' => 'auth/register'
+        ];
+
 
 
         $this->form_validation->set_rules('name', 'Nama', 'required', [
@@ -100,11 +104,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-
-            $this->load->view('frontend/layout/frontend-header', $data);
-            $this->load->view('frontend/layout/frontend-navbar');
-            $this->load->view('auth/register');
-            $this->load->view('frontend/layout/frontend-footer');
+            $this->load->view('home-index', $data);
         } else {
 
             $this->am->register();

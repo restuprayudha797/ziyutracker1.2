@@ -86,6 +86,8 @@ class Auth_model extends CI_Model
             'password' => $password,
             'name' => $name,
             'phone' => $phone,
+            'alamat' => '-',
+            'profile' => 'default.jpg',
             'is_active' => 1,
             'date_created' => time()
         ];

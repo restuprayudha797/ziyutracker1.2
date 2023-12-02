@@ -54,6 +54,7 @@ $route = array(
     'beranda' => 'home/home',
     'data-user' => 'admin/admin/page_users',
     'login' => 'auth/auth',
+    'register' => 'auth/auth/register',
     'keluar' => 'logout',
     'dashboard' => "admin/admin"
 

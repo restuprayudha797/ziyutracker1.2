@@ -47,7 +47,7 @@
                         Lupa kata sandi ?
                     </a>
                     <p class="signup-option">
-                        Tidak punya akun ? <a href="<?= base_url('auth/register') ?>">Daftar akun baru</a>
+                        Tidak punya akun ? <a href="<?= base_url('register') ?>">Daftar akun baru</a>
                     </p>
                 </div>
             </div>
