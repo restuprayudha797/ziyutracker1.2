@@ -7,7 +7,7 @@ class Admin_model extends CI_Model
 {
 
     private $PAYMENT = 'payment';
-    private $USER_ACTIVE = 'user_active';
+    private $DEVICE_ACTIVE = 'devices_active';
     private $USER = 'users';
 
 
@@ -43,40 +43,33 @@ class Admin_model extends CI_Model
         } elseif ($states == 'cancel') {
 
             $this->_updateRole($id, 'pembayaran berhasil dibatalkan', 3);
-        } elseif ($states == 'doneCod') {
-            $this->_updateRole($id, 'COD berhasil dikonfirmasi', 5);
-        } elseif ($states == 'cancelCod') {
-            $this->_updateRole($id, 'COD berhasil dibatalkan', 6);
         }
     }
 
     private function _updateRole($id, $message, $role_payment)
     {
 
+        // $this->db->set('is_active', 3)->where('email', $deviceactive['email'])->update($this->USER);
+
+
         $update =   $this->db->set('role_payment', $role_payment)->where('id_payment', $id)->update($this->PAYMENT);
 
-        if ($update) {
+        if ($update && $role_payment == 2) {
             $paymentData = $this->db->get_where($this->PAYMENT, ['id_payment' => $id])->row_array();
-            $userActive = $this->db->get_where($this->USER_ACTIVE, ['email' => $paymentData['email']])->row_array();
+            $deviceactive = $this->db->get_where($this->DEVICE_ACTIVE, ['email' => $paymentData['email']])->row_array();
 
-            if (!$userActive) {
-
-                if ($paymentData['package'] == 4 || $paymentData['package'] == 3) {
-                    $time = time() + 60 * 60 * 24 * 360;
-                } elseif ($paymentData['package'] == 2) {
-                    $time = time() + 60 * 60 * 24 * 30;
-                } elseif ($paymentData['package'] == 1) {
-                    $time = time() + 60 * 60 * 24 * 7;
-                }
-
-                $noSeri = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            // var_dump(!$deviceactive);
+            // die;
+            
+            if (!$deviceactive) {
 
                 $data = [
                     'email' => $paymentData['email'],
-                    'time_out' => $time
+                    'device_name' => 'Utama',
+                    'is_active' => 1
 
                 ];
-                $insert = $this->db->insert($this->USER_ACTIVE, $data);
+                $insert = $this->db->insert($this->DEVICE_ACTIVE, $data);
 
                 if ($insert) {
                     $this->createTableForUser($paymentData['email']);
@@ -85,39 +78,37 @@ class Admin_model extends CI_Model
                 }
             } else {
 
-                if ($paymentData['package'] == 3) {
-                    $time = time() + 60 * 60 * 24 * 360;
-                } elseif ($paymentData['package'] == 2) {
-                    $time = time() + 60 * 60 * 24 * 30;
-                } elseif ($paymentData['package'] == 1) {
-                    $time = time() + 60 * 60 * 24 * 7;
-                }
                 $data = [
-                    'time_out' => $time
+                    'email' => $paymentData['email'],
+                    'device_name' => 'NewDevice',
+                    'is_active' => 1
                 ];
 
-
-
-                $this->db->where('email', $paymentData['email']);
-                $this->db->update($this->USER_ACTIVE, $data);
+                $this->db->insert($this->DEVICE_ACTIVE, $data);
             }
         }
 
+        echo "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini";
+        die;
+        $this->session->set_flashdata('auth_message', '<script>Swal.fire({
+            icon: "success",
+            title: "Pembayaran Berhasil Di Konfirmasi",
+            showConfirmButton: false,
+            timer: 2000
+          });</script>');
 
-        $this->session->set_flashdata('admin_message', ' <div class="alert alert-success" id="notification" role="alert">
-             Data ' . $message . '!
-            </div>');
+        redirect('pembayaran');
 
-        redirect('admin/payment');
+
     }
     private function createTableForUser($email)
     {
         $this->load->dbforge();
 
 
-        $userActive = $this->db->get_where($this->USER_ACTIVE, ['email' => $email])->row_array();
+        $deviceActive = $this->db->get_where($this->DEVICE_ACTIVE, ['email' => $email])->row_array();
 
-        $markerName = $userActive['id_active'];
+        $markerName = $deviceActive['id_active'];
 
         // add new table for user tracking
         $tbMarker = [
@@ -125,6 +116,10 @@ class Admin_model extends CI_Model
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => TRUE
+            ],
+            'email' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100'
             ],
             'lat' => [
                 'type' => 'VARCHAR',
@@ -153,13 +148,17 @@ class Admin_model extends CI_Model
         // end add table tracking
 
         if ($markerCreate) {
-            $ledStatusName = $userActive['id_active'];
+            $ledStatusName = $deviceActive['id_active'];
             // add new table for user power
             $ledStatus = [
-                'id_ledStatus_' => [
+                'id_ledstatus_' => [
                     'type' => 'INT',
                     'constraint' => 11,
                     'auto_increment' => TRUE
+                ],
+                'email' => [
+                    'type' => 'VARCHAR',
+                    'constraint' => '100'
                 ],
                 'color' => [
                     'type' => 'VARCHAR',
@@ -172,10 +171,10 @@ class Admin_model extends CI_Model
 
                 ]
             ];
-            $this->dbforge->add_key('id_ledStatus_', TRUE);
+            $this->dbforge->add_key('id_ledstatus_', TRUE);
 
             $this->dbforge->add_field($ledStatus);
-            $ledStatusCreate = $this->dbforge->create_table('ledStatus_' . $ledStatusName);
+            $ledStatusCreate = $this->dbforge->create_table('ledstatus_' . $ledStatusName);
 
             if ($ledStatusCreate) {
 
@@ -183,14 +182,14 @@ class Admin_model extends CI_Model
                     'color' => 'blue',
                     'state' => '1'
                 ];
-                $setdata1 = $this->db->insert('ledStatus_' . $ledStatusName, $data1);
+                $setdata1 = $this->db->insert('ledstatus_' . $ledStatusName, $data1);
 
                 if ($setdata1) {
                     $data2 = [
                         'color' => 'red',
                         'state' => '1'
                     ];
-                    $setdata2 = $this->db->insert('ledStatus_' . $ledStatusName, $data2);
+                    $setdata2 = $this->db->insert('ledstatus_' . $ledStatusName, $data2);
 
                     if ($setdata2) {
 
@@ -198,21 +197,37 @@ class Admin_model extends CI_Model
                             'color' => 'green',
                             'state' => '1'
                         ];
-                        $setdata3 = $this->db->insert('ledStatus_' . $ledStatusName, $data3);
+                        $setdata3 = $this->db->insert('ledstatus_' . $ledStatusName, $data3);
 
                         if ($setdata3) {
-                            $update =   $this->db->set('is_active', 3)->where('email', $userActive['email'])->update($this->USER);
+                            $update =   $this->db->set('is_active', 3)->where('email', $deviceActive['email'])->update($this->USER);
                         }
                     }
                 }
             } else {
 
-                die;
-                echo "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini";
+                $this->dbforge->drop_table('marker_' . $markerName);
+
+                $this->db->where('id_active',$deviceActive['id_active']);
+                $this->db->delete($this->DEVICE_ACTIVE);
+
+                $this->session->set_flashdata('auth_message', '<script>Swal.fire({
+                    icon: "error",
+                    title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
+                    showConfirmButton: True
+                  });</script>');
+                
             }
         } else {
-            die;
-            echo "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini";
+
+            $this->db->where('id_active',$deviceActive['id_active']);
+                $this->db->delete($this->DEVICE_ACTIVE);
+
+                $this->session->set_flashdata('auth_message', '<script>Swal.fire({
+                    icon: "error",
+                    title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
+                    showConfirmButton: True
+                  });</script>');
         }
     }
 }
