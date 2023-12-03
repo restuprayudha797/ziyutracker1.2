@@ -24,7 +24,6 @@ class Location extends CI_Controller
         $id_devices_active = $this->input->get('data');
         if ($id_devices_active != null) {
             $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-            $userActive = $this->db->get_where('devices_active', ['email' => $user['email']])->row_array();
             $marker  = $this->db->query("SELECT * FROM `marker_" . $id_devices_active . "` ORDER BY id_marker DESC LIMIT 1;")->row_array();
 
 
