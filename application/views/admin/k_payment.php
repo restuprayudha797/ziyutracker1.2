@@ -36,7 +36,7 @@
 															}
 														?></td>
 														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#<?= $pay[]?>">Grid modal</button>
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#<?= $pay['id_payment']?>">Grid modal</button>
 															</div></td>
                                                         <!-- <td><img src=" base_url('assets/proof_of_payment/') . $pay['proof_of_payment']?>" alt=""></td> -->
 													</tr>
