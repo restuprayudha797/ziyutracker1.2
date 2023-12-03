@@ -35,4 +35,26 @@ class Profile extends CI_Controller
 
         $this->load->view('user-index', $data);
     }
+
+    public function updateProfile($id)
+    {
+
+
+        $device_name = $this->input->post('devices_name');
+
+       $update = $this->db->set('device_name', $device_name)->where('id_active', $id)->update('devices_active');
+
+        if ($update) {
+
+            $this->session->set_flashdata('profile_message', '<script>Swal.fire({
+                icon: "success",
+                title: "Nama Perangkat Berhasil Diubah",
+                showConfirmButton: false,
+                timer: 2000
+              });</script>');
+
+            redirect('profile');
+        }
+    }
+    
 }
