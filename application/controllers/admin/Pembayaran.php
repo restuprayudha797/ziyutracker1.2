@@ -46,10 +46,17 @@ class Pembayaran extends CI_Controller
         $this->adm->Prosess_Data($state, $id);
     }
 
-    public function tambah_payment(){
+    public function tambah_pay(){
         $email = $this->input->post("email");
 
         $this->adm->tambah_pay($email);
-        
     }
+
+    // public function tambah_pay(){
+    //     $email = $this->input->post("email");
+
+
+    //     $this->adm->tambah_pay($email);
+
+    // }
 }

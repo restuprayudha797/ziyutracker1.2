@@ -234,11 +234,19 @@ class Admin_model extends CI_Model
         $data = [
             'email' => $email,
             'proof_of_payment' => "default.jpg",
-            'payment_date' => date(),
-            'is_active' => 1
+            'payment_date' => time(),
+            'role_payment' => 1
         ];
 
-        $this->db->insert($this->PAYMEN,$data);
+        $insert = $this->db->insert('payment',$data);
+
+        
+            // $payment = $this->db->get_where('payment',['email' => $email])->row_array();
+
+            // $this->_updateRole($payment['id_payment'], "pembayaran berhasil dikonfirmasi", 2); 
+
+        
+
         $this->session->set_flashdata('auth_message', '<script>Swal.fire({
             icon: "error",
             title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",

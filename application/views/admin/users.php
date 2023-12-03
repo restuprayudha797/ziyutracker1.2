@@ -2,7 +2,7 @@
 							<div class="col-md-12">
 								<div class="card overflow-hidden">
 									<div class="card-header">
-										<h3 class="card-title">Default Tabs</h3>
+										<h3 class="card-title">Data User</h3>
 									</div>
 									<div class="card-body">
 										<div class="myTab">
@@ -58,14 +58,14 @@
 															}
 														?></td>
 														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $usrs['id_payment']?>">Cek</button>
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $usrs['phone']?>">Cek</button>
 															</div></td>
-													</tr>
-													<div class="modal fade" id="modal<?= $usrs['id_payment']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
+													</tr>	
+													<div class="modal fade" id="modal<?= $usrs['phone']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<h5 class="modal-title" id="example-Modal2">Modal title</h5>
+																	<h5 class="modal-title" id="example-Modal2">Pembayaran</h5>
 																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																		<span aria-hidden="true">×</span>
 																	</button>
@@ -73,23 +73,16 @@
 																<div class="modal-body">
 																	<div class="row">
 																		<div class="col-md-6">
-																			<form action="<?= base_url('admin/pembayaran/tambah_payment')?>" method="post">
-																			
+																			<form action="<?= base_url('admin/pembayaran/tambah_pay/')?>" method="post">
+																			<p>Nama : <?= $usrs['name']?></p>
 																			<p>Email : <?= $usrs['email']?></p>
-																			<input class="form-control" placeholder="Email" type="hidden" name="email" value="<?= $usrs['email']?>">	
-																		</div>
-																		<div class="col-md-6">
+																			<input type="hidden" name="email" value="<?= $usrs['email']?>">
+																			<p>No Tlp : <?= $usrs['phone']?></p>
 																		</div>
 																	</div>
 																<div class="modal-footer">
-																		<button type="submit" class="btn btn-danger">
-																		Tambah
-																					</button>
-																		
-																		
-																					</form>
-																	
-																	
+																	<button type="submit" class="btn btn-success">Tambah</button>
+																	</form>
 																</div>
 															</div>
 														</div>
