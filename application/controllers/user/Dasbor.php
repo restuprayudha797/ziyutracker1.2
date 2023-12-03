@@ -23,11 +23,13 @@ class Dasbor extends CI_Controller{
 
     public function index(){
 
+        $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data = [
             'title' => 'Dashboard',
-            'page' => ''
+            'page' => 'dasbor',
+            'user'=> $user
         ];
-        $this->load->view('admin-index', $data);
+        $this->load->view('user-index', $data);
       
     }
 
