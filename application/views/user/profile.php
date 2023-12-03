@@ -64,38 +64,47 @@
 </div>
 <!-- row closed -->
 <div class="row">
-    <div class="col-lg-5 col-xl-4 col-md-12 col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Devices <span class="badge bg-warning bade-primary">Cooming Soon</span></div>
-            </div>
-            <div class="card-body">
-                <div class="d-flex mb-3">
-                    <img alt="User Avatar" class="rounded-circle avatar-lg mr-2" src="<?= base_url('assets/root') ?>/icon/user_default.png">
-                    <div class="ml-auto mt-xl-2 mt-lg-0 ml-lg-2">
-                        <a href="#" class="btn btn-primary btn-sm mt-1 mb-1"><i class="fe fe-camera mr-1"></i>Edit profile</a>
-                        <a href="#" class="btn btn-danger btn-sm mt-1 mb-1"><i class="fe fe-camera-off mr-1"></i>Delete profile</a>
+
+    <?php $devices_active = $this->db->get_where('devices_active', ['email' => $this->session->userdata('email')])->result_array();
+
+    $totalDataDevice = count($devices_active);
+
+    ?>
+
+    <?php if ($totalDataDevice != 1) : ?>
+
+        <div class="col-lg-5 col-xl-4 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Perangkat</div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex mb-3">
+
                     </div>
+
+                    <?php
+                    $i = 1;
+                    foreach ($devices_active as $row) : ?>
+                        <form action="<?= base_url('user/profile/updateProfile/' . $row['id_active']) ?>" method="post">
+                            <div class="form-group">
+                                <label class="form-label">Perangkat <?= $i ?>
+                                </label>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control" name="devices_name" placeholder="Masukkan Nama Perangkat" value="<?= $row['device_name'] ?>"><button type="submit" class="btn btn-success ml-1">Edit</button>
+                                </div>
+                            </div>
+                        </form>
+                        <?php $i++ ?>
+                    <?php endforeach ?>
+
+
+
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Password Lama</label>
-                    <input type="password" class="form-control" placeholder="Masukkan Password Lama" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password Baru</label>
-                    <input type="password" class="form-control" placeholder="Masukkan Password Baru" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Konfirmasi Password</label>
-                    <input type="password" class="form-control" placeholder="Konfirmasi Password" required>
-                </div>
-            </div>
-            <div class="card-footer text-right">
-                <a href="#" class="btn btn-primary">UBAH SEKARANG</a>
-                <a href="#" class="btn btn-danger">BATALKAN</a>
             </div>
         </div>
-    </div>
+    <?php endif ?>
+
     <div class="col-lg-7 col-xl-8 col-md-12 col-sm-12">
         <div class="card">
             <div class="card-header">
@@ -123,7 +132,7 @@
                         <div class="alert alert-warning">
                             <strong>PEMBERITAHUAN</strong>
                             <hr class="message-inner-separator">
-                            <p>Untuk saat ini penambaham perangkat hanya dapat dilakukan oleh admin, silahkan klik tombol TAMBAH PERANGKAT jikan ingin menambahkan perangkat sekarang !  </p>
+                            <p>Untuk saat ini penambaham perangkat hanya dapat dilakukan oleh admin, silahkan klik tombol TAMBAH PERANGKAT jikan ingin menambahkan perangkat sekarang ! </p>
                         </div>
                     </div>
                 </div>
@@ -137,3 +146,5 @@
     </div>
 </div>
 <!-- row closed -->
+
+<?= $this->session->flashdata('profile_message') ?>
