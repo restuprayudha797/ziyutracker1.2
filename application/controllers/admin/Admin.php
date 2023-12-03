@@ -9,17 +9,17 @@ class Admin extends CI_Controller
 
 
         $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
-        // $is_active = $user['is_active'];
+        $is_active = $user['is_active'];
 
         // load helper clogin jika is_active tidak = 2
 
-        // if ($is_active != 6) {
-        //     check_login($is_active);
-        // } else {
+        if ($is_active != 5) {
+            check_login($is_active);
+        } else {
 
 
             $this->load->model('Admin_model', 'adm');
-        // }
+        }
     }
 
     public function index()

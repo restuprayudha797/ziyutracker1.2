@@ -28,6 +28,7 @@
 														<th class="wd-15p border-bottom-0">Nama</th>
 														<th class="wd-15p border-bottom-0">Email</th>
 														<th class="wd-20p border-bottom-0">No Tlp</th>
+														<th class="wd-20p border-bottom-0">Alamat</th>
 														<th class="wd-15p border-bottom-0">Tanggal</th>
 														<th class="wd-10p border-bottom-0">Aktifasi</th>
 													</tr>
@@ -38,6 +39,7 @@
 														<td><?= $usrs['name']?></td>
 														<td><?= $usrs['email']?></td>
 														<td><?= $usrs['phone']?></td>
+														<td><?= $usrs['alamat']?></td>
 														<td><?= date('d F Y',$usrs['date_created'])?></td>
 														<td><?php 
 															if ($usrs['is_active'] == 1) {
