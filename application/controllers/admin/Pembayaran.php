@@ -32,7 +32,7 @@ class Pembayaran extends CI_Controller
 
         $data = [
             'title' => 'Pembayaran',
-            'content' => 'page/k_payment',
+            'page' => 'k_payment',
             'user' => $user,
             'payment' => $payment
         ];

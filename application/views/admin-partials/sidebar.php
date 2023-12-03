@@ -32,7 +32,7 @@
            </li>
            <li aria-haspopup="true"><a href="<?= base_url('aktifasi-user') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Users Aktifasi </a>
            </li>
-           <li aria-haspopup="true"><a href="<?= base_url('aktifasi-user') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Pembayaran </a>
+           <li aria-haspopup="true"><a href="<?= base_url('pembayaran') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Pembayaran </a>
            </li>
          <?php endif ?>
 
