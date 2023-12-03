@@ -73,22 +73,21 @@
 																<div class="modal-body">
 																	<div class="row">
 																		<div class="col-md-6">
-																			<form action="<?= base_url('admin/pembayaran/tambah_payment')?>" method="post"></form>
+																			<form action="<?= base_url('admin/pembayaran/tambah_payment')?>" method="post">
 																			
+																			<p>Email : <?= $usrs['email']?></p>
+																			<input class="form-control" placeholder="Email" type="hidden" name="email" value="<?= $usrs['email']?>">	
 																		</div>
 																		<div class="col-md-6">
-                                                        				<img style="heigth:100px; width:200px;" src=" <?=base_url('assets/proof_of_payment/') . $usrs['proof_of_payment']?>" alt="">	
-                                                        				
-																			
 																		</div>
 																	</div>
 																<div class="modal-footer">
-																		<a href="<?= base_url('admin/pembayaran/Prosess_Data/cancel/' . $usrs['id_payment']) ?>" class="btn btn-danger">
-																		BATALKAN
-																					</a>
+																		<button type="submit" class="btn btn-danger">
+																		Tambah
+																					</button>
 																		
 																		
-																	<?php endif ; ?>
+																					</form>
 																	
 																	
 																</div>

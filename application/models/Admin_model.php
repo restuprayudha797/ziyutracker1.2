@@ -229,4 +229,23 @@ class Admin_model extends CI_Model
         }
     }
 
+    public function tambah_pay($email){
+
+        $data = [
+            'email' => $email,
+            'proof_of_payment' => "default.jpg",
+            'payment_date' => date(),
+            'is_active' => 1
+        ];
+
+        $this->db->insert($this->PAYMEN,$data);
+        $this->session->set_flashdata('auth_message', '<script>Swal.fire({
+            icon: "error",
+            title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
+            showConfirmButton: True
+          });</script>');
+
+          redirect("admin/admin/");
+    }
+
 }
