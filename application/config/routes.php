@@ -62,7 +62,7 @@ $route = array(
     'keluar' => 'logout',
     'dashboard' => "admin/admin",
     'aktifasi-user' => "admin/admin/users_aktifasi",
-    'pembayaran' => "admin/admin/data_pembayaran"
+    'pembayaran' => "admin/pembayaran/"
 
 );
 
