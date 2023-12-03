@@ -21,7 +21,7 @@
                             <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
                         </ol>
                     </div>
-                    <?php $this->load->view('admin/' . $content) ?>
+                    <?php $this->load->view('admin/' . $page) ?>
                 </div>
             </div>
         </div>
