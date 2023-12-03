@@ -8,15 +8,17 @@
 
           // get user_active
           $user_active_data = $this->db->get_where('devices_active', ['email' => $user['email'], 'is_active' => 1])->result_array();
+
           ?>
+
 
          <li aria-haspopup="true"><a href="<?= base_url('dashboard') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
          </li>
          <?php if (count($user_active_data) == 1) : ?>
-           <li aria-haspopup="true"><a href="<?= base_url('lokasi') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/maps.png') ?>" alt="" width="20px">
+           <li aria-haspopup="true"><a href="<?= base_url('lokasi?data=') . $user_active_data[0]['id_active']; ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/maps.png') ?>" alt="" width="20px">
                Lokasi</a>
            </li>
-           <li aria-haspopup="true"><a href="<?= base_url('saklar') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Saklar </a>
+           <li aria-haspopup="true"><a href="<?= base_url('saklar?data=') . $user_active_data[0]['id_active']; ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/switch.png') ?>" alt="" width="20px"> Saklar </a>
            </li>
          <?php else :  ?>
 
@@ -38,10 +40,10 @@
 
              </ul>
            </li>
-           
+
          <?php endif ?>
 
-         <li aria-haspopup="true"><a href="widgets.html" class=""><img src="<?= base_url('assets/root/icon/resume.png') ?>" alt="" width="20px"> Profile</a></li>
+         <li aria-haspopup="true"><a href="<?= base_url('profile') ?>" class=""><img src="<?= base_url('assets/root/icon/resume.png') ?>" alt="" width="20px"> Profile</a></li>
 
      </nav>
      <!--Nav end -->

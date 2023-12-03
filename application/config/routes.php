@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -65,7 +65,13 @@ $route = array(
     'pembayaran' => "admin/pembayaran",
     'lokasi' => "user/Location",
     'updateLokasi' => "user/Location/updateLokasi",
-    'saklar' => "user/Saklar"
+    'saklar' => "user/Saklar",
+    'on' => "user/Saklar/turnOn",
+    'off' => "user/Saklar/turnOff",
+    'profile' => "user/profile",
+
+
+
 
 
 );
