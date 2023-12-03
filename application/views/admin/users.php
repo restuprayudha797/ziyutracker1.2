@@ -31,6 +31,7 @@
 														<th class="wd-20p border-bottom-0">Alamat</th>
 														<th class="wd-15p border-bottom-0">Tanggal</th>
 														<th class="wd-10p border-bottom-0">Aktifasi</th>
+														<th class="wd-10p border-bottom-0">Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -56,7 +57,44 @@
 																echo 'Admin(Tidak Aktif)';
 															}
 														?></td>
+														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $usrs['id_payment']?>">Cek</button>
+															</div></td>
 													</tr>
+													<div class="modal fade" id="modal<?= $usrs['id_payment']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
+														<div class="modal-dialog" role="document">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title" id="example-Modal2">Modal title</h5>
+																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">×</span>
+																	</button>
+																</div>
+																<div class="modal-body">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<form action="<?= base_url('admin/pembayaran/tambah_payment')?>" method="post"></form>
+																			
+																		</div>
+																		<div class="col-md-6">
+                                                        				<img style="heigth:100px; width:200px;" src=" <?=base_url('assets/proof_of_payment/') . $usrs['proof_of_payment']?>" alt="">	
+                                                        				
+																			
+																		</div>
+																	</div>
+																<div class="modal-footer">
+																		<a href="<?= base_url('admin/pembayaran/Prosess_Data/cancel/' . $usrs['id_payment']) ?>" class="btn btn-danger">
+																		BATALKAN
+																					</a>
+																		
+																		
+																	<?php endif ; ?>
+																	
+																	
+																</div>
+															</div>
+														</div>
+													</div>
 												<?php endforeach ;?>	
 												</tbody>
 											</table>
@@ -122,4 +160,3 @@
 								</div>
 							</div>
 						</div>
-						<script>
