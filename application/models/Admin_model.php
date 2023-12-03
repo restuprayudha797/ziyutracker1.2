@@ -88,8 +88,6 @@ class Admin_model extends CI_Model
             }
         }
 
-        echo "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini";
-        die;
         $this->session->set_flashdata('auth_message', '<script>Swal.fire({
             icon: "success",
             title: "Pembayaran Berhasil Di Konfirmasi",
@@ -230,4 +228,5 @@ class Admin_model extends CI_Model
                   });</script>');
         }
     }
+
 }

@@ -36,7 +36,7 @@
 															}
 														?></td>
 														<td><div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $pay['id_payment']?>">Grid modal</button>
+																<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#modal<?= $pay['id_payment']?>">Cek</button>
 															</div></td>
 													</tr>
 													<div class="modal fade" id="modal<?= $pay['id_payment']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">

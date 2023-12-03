@@ -71,16 +71,16 @@
 													
 													<tr>
 														<th class="wd-15p border-bottom-0">Email</th>
-														<th class="wd-20p border-bottom-0">Aksi</th>
+														<th class="wd-20p border-bottom-0" id="asu">Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
 												<?php $i = 1;?>
 												<?php foreach ($aktif_user as $usrA) : ?>
 													<tr>
-														<td><?= $usrA['email']?></td>
+														<td id="id" ><?= $usrA['email']?></td>
 														<td><div class="form-check form-switch">
-														<input class="form-check-input" type="checkbox" role="switch" <?php if ($usrA['is_active'] == 3) : ?>id="flexSwitchCheckChecked"value="<?= $usrA['is_active']?> "checked<?php endif;?><?php if ($usrA['is_active'] == 4) : ?>id="flexSwitchCheckDefault"value="<?= $usrA['is_active']?>"<?php endif; ?>>
+														<input class="form-check-input" type="checkbox" role="switch">
 													  </div></td>
 														
 													</tr>
@@ -122,3 +122,4 @@
 								</div>
 							</div>
 						</div>
+						<script>
