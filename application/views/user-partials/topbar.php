@@ -5,7 +5,7 @@
             <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a><!-- sidebar-toggle-->
             <div class="d-flex">
                 <a class="header-brand" href="index.html">
-                    <img src="<?= base_url('front_ass') ?>/icon/ziyutracker.png" class="header-brand-img desktop-logo " alt="Dashlot logo" width="400px=">
+                    <img src="<?= base_url('assets/root') ?>/icon/ziyutracker.png" class="header-brand-img desktop-logo " alt="Dashlot logo" width="400px=">
                 </a>
                 <div class="d-flex header-right ml-auto">
                     <div class="dropdown header-fullscreen">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="drop-scroll">
                                 <a href="#" class="p-3 d-flex border-bottom">
-                                    <div class="avatar avatar-md  mr-3 d-block cover-image brround default-shadow" data-image-src="<?= base_url('front_ass') ?>/icon/logotrack.png">
+                                    <div class="avatar avatar-md  mr-3 d-block cover-image brround default-shadow" data-image-src="<?= base_url('assets/root') ?>/icon/logotrack.png">
                                         <span class="avatar-status bg-success"></span>
                                     </div>
                                     <div class="w-80">
@@ -49,12 +49,12 @@
                                 <span class="mr-3 mb-0  fs-15 font-weight-semibold">Ziyu Tracker</span>
                                 <!-- <small class="text-muted mr-3"><b> $user['name'] ?></small> -->
                             </div>
-                            <img class="avatar avatar-md brround" src="<?= base_url('front_ass') ?>/icon/user_default.png" alt="image">
+                            <img class="avatar avatar-md brround" src="<?= base_url('assets/root') ?>/icon/user_default.png" alt="image">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow animated bounceInDown w-auto">
                             <div class="user-profile bg-header-image border-bottom p-3">
                                 <div class="user-image text-center">
-                                    <img class="user-images" src="<?= base_url('front_ass') ?>/icon/user_default.png" alt="image">
+                                    <img class="user-images" src="<?= base_url('assets/root') ?>/icon/user_default.png" alt="image">
                                 </div>
                                 <div class="user-details text-center">
                                     <!-- <h4 class="mb-0"> $user['name'] ?></h4> -->

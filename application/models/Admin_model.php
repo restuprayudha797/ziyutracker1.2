@@ -60,7 +60,7 @@ class Admin_model extends CI_Model
 
             // var_dump(!$deviceactive);
             // die;
-            
+
             if (!$deviceactive) {
 
                 $data = [
@@ -96,8 +96,6 @@ class Admin_model extends CI_Model
           });</script>');
 
         redirect('pembayaran');
-
-
     }
     private function createTableForUser($email)
     {
@@ -206,7 +204,7 @@ class Admin_model extends CI_Model
 
                 $this->dbforge->drop_table('marker_' . $markerName);
 
-                $this->db->where('id_active',$deviceActive['id_active']);
+                $this->db->where('id_active', $deviceActive['id_active']);
                 $this->db->delete($this->DEVICE_ACTIVE);
 
                 $this->session->set_flashdata('auth_message', '<script>Swal.fire({
@@ -214,14 +212,13 @@ class Admin_model extends CI_Model
                     title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
                     showConfirmButton: True
                   });</script>');
-                
             }
         } else {
 
-            $this->db->where('id_active',$deviceActive['id_active']);
-                $this->db->delete($this->DEVICE_ACTIVE);
+            $this->db->where('id_active', $deviceActive['id_active']);
+            $this->db->delete($this->DEVICE_ACTIVE);
 
-                $this->session->set_flashdata('auth_message', '<script>Swal.fire({
+            $this->session->set_flashdata('auth_message', '<script>Swal.fire({
                     icon: "error",
                     title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
                     showConfirmButton: True
@@ -229,7 +226,8 @@ class Admin_model extends CI_Model
         }
     }
 
-    public function tambah_pay($email){
+    public function tambah_pay($email)
+    {
 
         $data = [
             'email' => $email,
@@ -238,22 +236,26 @@ class Admin_model extends CI_Model
             'role_payment' => 1
         ];
 
-        $insert = $this->db->insert('payment',$data);
+        $insert = $this->db->insert('payment', $data);
 
-        
-            // $payment = $this->db->get_where('payment',['email' => $email])->row_array();
+        if ($insert) {
 
-            // $this->_updateRole($payment['id_payment'], "pembayaran berhasil dikonfirmasi", 2); 
-
-        
-
-        $this->session->set_flashdata('auth_message', '<script>Swal.fire({
-            icon: "error",
-            title: "table marker gagal dibuat silahkan hubungi developer untuk menyelesaikan masalah ini",
-            showConfirmButton: True
-          });</script>');
-
-          redirect("admin/admin/");
+            $this->session->set_flashdata('user_message', '<script>
+            Swal.fire({
+              title: "SELAMAT!",
+              text: "Devices baru berhasil di ajukan, silahkan cek di menu pembayaran dan klik konfirmasi jika pengguna sudah melakukan pembayaran",
+              icon: "success"
+            });
+          </script>');
+            redirect("data-user");
+        } else {
+            $this->session->set_flashdata('user_message', '<script>
+            Swal.fire({
+              title: "SELAMAT!",
+              text: "Devices baru gagal di ajukan, silahkan hubungi developer untuk mengatasi masalah ini!",
+              icon: "error"
+            });
+          </script>');
+        }
     }
-
 }

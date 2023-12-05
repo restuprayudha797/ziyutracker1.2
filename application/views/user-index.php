@@ -7,7 +7,7 @@
 
 <body class="app">
     <div id="loading">
-        <img src="<?= base_url('front_ass') ?>/images/other/loader.svg" class="loader-img" alt="Loader">
+        <img src="<?= base_url('assets/root') ?>/images/other/loader.svg" class="loader-img" alt="Loader">
     </div>
     <div class="page">
         <div class="page-main">

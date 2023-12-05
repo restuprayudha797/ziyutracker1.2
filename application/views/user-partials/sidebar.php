@@ -12,7 +12,9 @@
           ?>
 
 
-         <li aria-haspopup="true"><a href="<?= base_url('dashboard') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
+         <li aria-haspopup="true"><a href="<?= base_url('dasbor') ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/dashboard.png') ?>" alt="" width="20px"> Dashboard </a>
+         <!-- <li aria-haspopup="true"><a href="<?= base_url('profile') ?>" class=""><img src="<?= base_url('assets/root/icon/resume.png') ?>" alt="" width="20px"> Profile</a></li> -->
+
          </li>
          <?php if (count($user_active_data) == 1) : ?>
            <li aria-haspopup="true"><a href="<?= base_url('lokasi?data=') . $user_active_data[0]['id_active']; ?>" class="sub-icon"><img src="<?= base_url('assets/root/icon/maps.png') ?>" alt="" width="20px">

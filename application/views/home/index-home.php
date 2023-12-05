@@ -16,7 +16,7 @@
               <div class="apa1n"></div>
               <div class="apa1"></div>
               <div class="apa">
-                <img src="<?= base_url('assets/') ?>home/images/produk/gps.png" alt="gps-image" />
+                <img src="https://tracker.ziyutechno.com/assets/home/images/produk/gps.png" alt="gps-image" />
               </div>
               <div class="apa2"></div>
               <div class="apa2n"></div>

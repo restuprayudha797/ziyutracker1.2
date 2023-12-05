@@ -49,6 +49,13 @@
 <!-- Color-palette css-->
 <link rel="stylesheet" href="<?= base_url('assets/root') ?>/css/skins.css" />
 
+<!-- Data table css -->
+<link href="<?= base_url('assets/root') ?>/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="<?= base_url('assets/root') ?>/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<?= base_url('assets/root') ?>/plugins/datatable/css/buttons.bootstrap4.min.css">
+<link href="<?= base_url('assets/root') ?>/plugins/datatable/responsive.bootstrap4.min.css" rel="stylesheet" />
+
+
 <!-- leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

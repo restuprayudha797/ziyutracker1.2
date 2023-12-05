@@ -50,7 +50,7 @@ class Admin extends CI_Controller
         $user = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
 
         $data = [
-            'title' => 'Users',
+            'title' => 'DATA USERS',
             'page' => 'users',
             'user' => $user,
             'users' => $users,
