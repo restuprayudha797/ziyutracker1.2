@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <a class="" href="<?= base_url('home') ?>">
-              <img class="py-3" src="https://tracker.ziyutechno.com/front_ass/icon/ziyutracker.png" alt="Logo" width="130px" />
+              <img class="py-3" src="https://tracker.ziyutechno.com/assets/root/icon/ziyutracker.png" alt="Logo" width="130px" />
 
             </a>
             <!-- Hamburger -->

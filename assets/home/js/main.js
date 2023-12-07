@@ -17,10 +17,10 @@
 		// === logo change
 		if (ud_header.classList.contains("sticky")) {
 			logo.src =
-				"https://tracker.ziyutechno.com/front_ass/icon/ziyutracker.png";
+				"https://tracker.ziyutechno.com/assets/home/images/produk/gps.png";
 		} else {
 			logo.src =
-				"https://tracker.ziyutechno.com/front_ass/icon/ziyutracker.png";
+				"https://tracker.ziyutechno.com/assets/home/images/produk/gps.png";
 		}
 
 		// show or hide the aback-top-top button
