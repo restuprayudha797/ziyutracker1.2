@@ -42,7 +42,7 @@ class Profile extends CI_Controller
 
         $device_name = $this->input->post('devices_name');
 
-       $update = $this->db->set('device_name', $device_name)->where('id_active', $id)->update('devices_active');
+        $update = $this->db->set('device_name', $device_name)->where('id_active', $id)->update('devices_active');
 
         if ($update) {
 
@@ -56,5 +56,4 @@ class Profile extends CI_Controller
             redirect('profile');
         }
     }
-    
 }

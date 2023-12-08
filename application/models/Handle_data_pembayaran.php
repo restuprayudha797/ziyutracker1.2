@@ -42,28 +42,28 @@ class Handle_data_pembayaran extends CI_Model
 
             if ($addNewDevicesData) {
               // jika berhasil menambahkan data device baru maka buat table marker dan ledstatus
-  
-  
+
+
               $getLatestDevicesActive = $this->db->query("SELECT id_active FROM devices_active WHERE email = '" . $cekUserAktivation['email'] . "' ORDER BY id_active DESC LIMIT 1")->row_array();
-  
+
               $addNewMarker = $this->_addNewMarker($getLatestDevicesActive['id_active']);
-  
+
               if ($addNewDevicesData) {
                 // jika tambah table marker berhasil maka tambah table ledstatus baru
-  
+
                 $addNewLedStatus = $this->_addNewLedStatus($getLatestDevicesActive['id_active']);
-  
+
                 if ($addNewLedStatus) {
-  
+
                   $addDataLedStatus1 = $this->_addNewLedStatusData($getLatestDevicesActive['id_active'], 'blue');
-  
+
                   if ($addDataLedStatus1) {
                     $addDataLedStatus2 = $this->_addNewLedStatusData($getLatestDevicesActive['id_active'], 'red');
-  
+
                     if ($addDataLedStatus2) {
                       $addDataLedStatus3 = $this->_addNewLedStatusData($getLatestDevicesActive['id_active'], 'green');
                       if ($addDataLedStatus3) {
-  
+
                         $this->session->set_flashdata('user_message', '<script>
                         Swal.fire({
                           title: "SELAMAT!",
@@ -85,7 +85,7 @@ class Handle_data_pembayaran extends CI_Model
                   echo 'ledstatus baru gagal ditambahkan, silahkan hubungi admin untuk menyelesaikan masalah ini!';
                 }
               } else {
-  
+
                 echo 'marker baru gagal ditambahkan silahkan hubungi admin untuk menyelesaikan masalah ini!';
               }
             } else {
@@ -169,7 +169,7 @@ class Handle_data_pembayaran extends CI_Model
       </script>');
         redirect("pembayaran");
       }
-    }else{
+    } else {
       echo 'data pembayaran gagal ditolak, silahkan hubungi admin untuk menyelesaikan masalah ini!';
     }
   }

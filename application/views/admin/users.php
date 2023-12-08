@@ -7,17 +7,17 @@
 			<div class="card-body">
 				<div class="myTab">
 					<ul class="nav  nav-tabs m-0" id="myTab" role="tablist">
-						<li class="nav-item ">
+						<!-- <li class="nav-item ">
 							<a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">All</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Users</a>
+						</li> -->
+						<!-- <li class="nav-item">
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" class="d" role="tab" aria-controls="profile" aria-selected="false">Users</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="true">Admin</a>
-						</li>
+						</li> -->
 					</ul>
-					<div class="tab-content  p-3 border" id="myTabContent">
+					<div class="tab-content  p-3 " id="myTabContent">
 						<div class="tab-pane fade p-0 active show" id="home" role="tabpanel" aria-labelledby="home-tab">
 							<!-- row opened -->
 							<!-- LOAD TABLE -->
